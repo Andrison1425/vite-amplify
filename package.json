@@ -16,8 +16,8 @@
     "build:server": "tsc -p tsconfig.node.json && vite build --ssr src/entry-server.tsx",
     "clean": "rimraf dist node_modules yarn.lock .amplify-hosting",
     "dev": "nodemon --watch server --exec tsx server",
-    "format": "prettier --write src server.ts api",
-    "lint": "yarn eslint src server.ts api --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write src server.ts",
+    "lint": "yarn eslint src server.ts --report-unused-disable-directives --max-warnings 0",
     "postbuild": "chmod +x postbuild.sh && ./postbuild.sh",
     "serve": "node server/server.js",
     "type-check": "tsc --noEmit"

@@ -5,7 +5,6 @@ dist-*
 .amplify-hosting
 coverage
 .next
-api
 .tsbuild*
 node_modules
 

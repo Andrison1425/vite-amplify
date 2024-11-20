@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import { ViteDevServer } from 'vite';
 import express from 'express';
 import 'dotenv/config';
-import api from './api/api.js';
 
 const __dirname: string = path.dirname(fileURLToPath(import.meta.url));
 const PORT = parseFloat(process.env.PORT || '5137');
@@ -41,10 +40,6 @@ export const createServer = async (root = process.cwd(), env = process.env.NODE_
       }),
     );
   }
-
-  // inject api router
-  app.use('/api', api.router);
-  console.log('API routes:', api.listRoutes());
 
   // serve index.html from parent server for all non-file requests
   app.use('*', async (req, res, next) => {

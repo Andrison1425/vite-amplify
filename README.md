@@ -31,7 +31,6 @@ Template with Vite SSR + Express APIs + AWS Amplify Hosting.
 * [tsx](https://github.com/privatenumber/tsx)
 * [dotenv](https://github.com/motdotla/dotenv?tab=readme-ov-file)
 * [svgr](https://github.com/gregberge/svgr)
-* [react-tweet](https://github.com/vercel/react-tweet)
 * [next-themes](https://github.com/pacocoursey/next-themes)
 
 ## Development
@@ -78,9 +77,6 @@ dist
 │   ├── index.html                     .56 kB │ gzip:      .36 kB
 │   └── robots.txt                     .06 kB │ gzip:      .08 kB
 └── server
-    ├── api
-    │   ├── api.d.ts
-    │   └── api.js
     ├── entry-server.js
     ├── favicon.ico
     ├── robots.txt
@@ -89,15 +85,13 @@ dist
     ├── tsconfig.node.tsbuildinfo
     ├── vite.config.d.ts
     └── vite.config.js
-
-5 directories, 15 files
 ```
 
 ## Amplify Build
 
 * `amplify.yml` is the build spec for Amplify Hosting ([AWS Docs](https://docs.aws.amazon.com/amplify/latest/userguide/build-settings.html))
 
-* `deploy-minifest.json` is the deployment spec and is what deploys the express api server ([AWS Docs](https://docs.aws.amazon.com/amplify/latest/userguide/ssr-deployment-specification.html))
+* `deploy-minifest.json` is the deployment spec and is what deploys an optional express server ([AWS Docs](https://docs.aws.amazon.com/amplify/latest/userguide/ssr-deployment-specification.html))
 
 * `postbuild.sh` will take the build from `dist` and copy it over to the amplify build folder (`.amplify-hosting`) which results in ([AWS Docs](https://docs.aws.amazon.com/amplify/latest/userguide/deploy-express-server.html)):
 
@@ -114,9 +108,6 @@ dist
 │       │   └── robots.txt                        .06 kB │ gzip:      .08 kB
 │       ├── package.json
 │       └── server
-│           ├── api
-│           │   ├── api.d.ts
-│           │   └── api.js
 │           ├── entry-server.js
 │           ├── favicon.ico
 │           ├── robots.txt
@@ -129,8 +120,6 @@ dist
 └── static
     ├── favicon.ico                             14.73 kB │ gzip:     4.46 kB
     └── robots.txt                                .06 kB │ gzip:      .08 kB
-
-8 directories, 19 files
 ```
 
 ## Lighthouse
